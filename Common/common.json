@@ -1,0 +1,44 @@
+﻿{
+  "Routes": [
+
+    {
+      "DownstreamPathTemplate": "/api/v1/common/branches",
+      "DownstreamScheme": "https",
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44362"
+        }
+      ],
+      "UpstreamPathTemplate": "/common/branches",
+      "UpstreamHttpMethod": [ "GET" ]
+
+    }
+  ]
+}
+//"Key": "user"
+ //{
+    //  "DownstreamPathTemplate": "/api/cast/getCast",
+    //  "DownstreamScheme": "https",
+    //  "DownStreamHostAndPorts": [
+    //    {
+    //      "Host": "localhost",
+    //      "Port": "44340"
+    //    }
+    //  ],
+    //  "UpstreamPathTemplate": "/getCast",
+    //  "Key": "cast"
+    //}
+//"Aggregates": [
+  //  {
+  //    "ReRouteKeys": [
+  //      "User",
+  //      "Cast"
+  //    ],
+
+  //    "UpstreamPathTemplate": "UserAndCast"
+  //  }
+  //],
+  //"GlobalConfiguration": {
+  //  "BaseUrl": "https://localhost:44353/"
+  //}
