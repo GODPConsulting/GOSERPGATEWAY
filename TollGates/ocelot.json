@@ -281,7 +281,7 @@
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
 
-    
+
     // PRIMARY SOLUTION ROUTERS
 
     {
@@ -375,6 +375,7 @@
 
     //PURCHASES AND PAYABLES ROUTERS
 
+
     {
       "DownstreamPathTemplate": "/api/v1/supplier/{url}",
       "DownstreamScheme": "http",
@@ -415,8 +416,64 @@
       ],
       "UpstreamPathTemplate": "/onwebsupplier/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
-    }
+    },
 
+    {
+      "DownstreamPathTemplate": "/api/v1/ppidentity/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 15 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "73"
+        }
+        //{
+        //  "Host": "localhost",
+        //  "Port": "5174"
+        //}
+      ],
+      "UpstreamPathTemplate": "/ppidentity/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+
+
+    //PPE ROUTERS
+    {
+      "DownstreamPathTemplate": "/api/v1/addition/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 15 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "75"
+        }
+      ],
+      "UpstreamPathTemplate": "/addition/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/v1/assetclassification/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 15 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "75"
+        }
+      ],
+      "UpstreamPathTemplate": "/assetclassification/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    }
 
   ],
 
