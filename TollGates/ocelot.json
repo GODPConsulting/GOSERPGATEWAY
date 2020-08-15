@@ -7,7 +7,7 @@
     {
       "DownstreamPathTemplate": "/api/v1/fee/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -24,7 +24,7 @@
     {
       "DownstreamPathTemplate": "/api/v1/creditclassification/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -41,7 +41,7 @@
     {
       "DownstreamPathTemplate": "/api/v1/loanstaging/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -58,7 +58,7 @@
     {
       "DownstreamPathTemplate": "/api/v1/businesscategory/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -75,7 +75,7 @@
     {
       "DownstreamPathTemplate": "/api/v1/cashierteller/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -92,7 +92,7 @@
     {
       "DownstreamPathTemplate": "/api/v1/depositcategory/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -109,7 +109,7 @@
     {
       "DownstreamPathTemplate": "/api/v1/transactioncharge/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -126,7 +126,7 @@
     {
       "DownstreamPathTemplate": "/api/v1/transactiontax/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -143,7 +143,7 @@
     {
       "DownstreamPathTemplate": "/api/v1/tillvault/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -160,7 +160,7 @@
     {
       "DownstreamPathTemplate": "/api/v1/accounttype/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -177,7 +177,7 @@
     {
       "DownstreamPathTemplate": "/api/v1/product/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -186,20 +186,32 @@
           "Host": "104.238.103.48",
           "Port": "71"
         }
-        //,
-        //{
-        //  "Host": "localhost",
-        //  "Port": "5174"
-        //}
       ],
       "UpstreamPathTemplate": "/product/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
 
     {
+      "DownstreamPathTemplate": "/api/v1/ifrs/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "71"
+        }
+      ],
+      "UpstreamPathTemplate": "/ifrs/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+
+    {
       "DownstreamPathTemplate": "/api/v1/collateral/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -216,7 +228,7 @@
     {
       "DownstreamPathTemplate": "/api/v1/loanschedule/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -233,7 +245,7 @@
     {
       "DownstreamPathTemplate": "/api/v1/accountsetup/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -250,7 +262,7 @@
     {
       "DownstreamPathTemplate": "/api/v1/loancustomer/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -267,7 +279,7 @@
     {
       "DownstreamPathTemplate": "/api/v1/creditriskscorecard/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -281,13 +293,211 @@
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
 
+    {
+      "DownstreamPathTemplate": "/api/v1/loanapplication/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "71"
+        }
+      ],
+      "UpstreamPathTemplate": "/loanapplication/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
 
-    // PRIMARY SOLUTION ROUTERS
+    {
+      "DownstreamPathTemplate": "/api/v1/creditappraisal/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "71"
+        }
+      ],
+      "UpstreamPathTemplate": "/creditappraisal/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/v1/investorfundproduct/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "71"
+        }
+      ],
+      "UpstreamPathTemplate": "/investorfundproduct/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/v1/investorfund/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "71"
+        }
+      ],
+      "UpstreamPathTemplate": "/investorfund/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/v1/loan/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "71"
+        }
+      ],
+      "UpstreamPathTemplate": "/loan/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/v1/loancustomerfs/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "71"
+        }
+      ],
+      "UpstreamPathTemplate": "/loancustomerfs/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/v1/lms/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "71"
+        }
+      ],
+      "UpstreamPathTemplate": "/lms/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/accountopening/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "71"
+        }
+      ],
+      "UpstreamPathTemplate": "/accountopening/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/changeofrates/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "71"
+        }
+      ],
+      "UpstreamPathTemplate": "/changeofrates/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/transfer/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "71"
+        }
+      ],
+      "UpstreamPathTemplate": "/transfer/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/withdrawal/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "71"
+        }
+      ],
+      "UpstreamPathTemplate": "/withdrawal/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/dashboard/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "71"
+        }
+      ],
+      "UpstreamPathTemplate": "/dashboard/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+
+    // IDENTITY SERVEER ROUTERS
 
     {
       "DownstreamPathTemplate": "/api/v1/identity/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -304,14 +514,18 @@
     {
       "DownstreamPathTemplate": "/api/v1/admin/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
       "DownStreamHostAndPorts": [
+        //{
+        //  "Host": "104.238.103.48",
+        //  "Port": "72"
+        //}
         {
-          "Host": "104.238.103.48",
-          "Port": "72"
+          "Host": "localhost",
+          "Port": "59798"
         }
       ],
       "UpstreamPathTemplate": "/admin/{url}",
@@ -321,7 +535,69 @@
     {
       "DownstreamPathTemplate": "/api/v1/workflow/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        //{
+        //  "Host": "104.238.103.48",
+        //  "Port": "72"
+        //}
+        {
+          "Host": "localhost",
+          "Port": "59798"
+        }
+      ],
+      "UpstreamPathTemplate": "/workflow/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/v1/company/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        //{
+        //  "Host": "104.238.103.48",
+        //  "Port": "72"
+        //}
+        {
+          "Host": "localhost",
+          "Port": "59798"
+        }
+      ],
+      "UpstreamPathTemplate": "/company/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/v1/common/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        //{
+        //  "Host": "104.238.103.48",
+        //  "Port": "72"
+        //}  
+        {
+          "Host": "localhost",
+          "Port": "59798"
+        }
+      ],
+      "UpstreamPathTemplate": "/common/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/email/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -335,43 +611,10 @@
         //  "Port": "59798"
         //}
       ],
-      "UpstreamPathTemplate": "/workflow/{url}",
+      "UpstreamPathTemplate": "/email/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
 
-    {
-      "DownstreamPathTemplate": "/api/v1/company/{url}",
-      "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
-      "LoadBalancerOptions": {
-        "Type": "RoundRobin"
-      },
-      "DownStreamHostAndPorts": [
-        {
-          "Host": "104.238.103.48",
-          "Port": "72"
-        }
-      ],
-      "UpstreamPathTemplate": "/company/{url}",
-      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
-    },
-
-    {
-      "DownstreamPathTemplate": "/api/v1/common/{url}",
-      "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
-      "LoadBalancerOptions": {
-        "Type": "RoundRobin"
-      },
-      "DownStreamHostAndPorts": [
-        {
-          "Host": "104.238.103.48",
-          "Port": "72"
-        }
-      ],
-      "UpstreamPathTemplate": "/common/{url}",
-      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
-    },
 
     //PURCHASES AND PAYABLES ROUTERS
 
@@ -379,19 +622,19 @@
     {
       "DownstreamPathTemplate": "/api/v1/supplier/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
       "DownStreamHostAndPorts": [
-        {
-          "Host": "104.238.103.48",
-          "Port": "73"
-        }
         //{
-        //  "Host": "localhost",
-        //  "Port": "5174"
+        //  "Host": "104.238.103.48",
+        //  "Port": "73"
         //}
+        {
+          "Host": "localhost",
+          "Port": "5174"
+        }
       ],
       "UpstreamPathTemplate": "/supplier/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
@@ -400,7 +643,7 @@
     {
       "DownstreamPathTemplate": "/api/v1/onwebsupplier/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -409,10 +652,6 @@
           "Host": "104.238.103.48",
           "Port": "73"
         }
-        //{
-        //  "Host": "localhost",
-        //  "Port": "5174"
-        //}
       ],
       "UpstreamPathTemplate": "/onwebsupplier/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
@@ -421,30 +660,50 @@
     {
       "DownstreamPathTemplate": "/api/v1/ppidentity/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
       "DownStreamHostAndPorts": [
-        {
-          "Host": "104.238.103.48",
-          "Port": "73"
-        }
         //{
-        //  "Host": "localhost",
-        //  "Port": "5174"
+        //  "Host": "104.238.103.48",
+        //  "Port": "73"
         //}
+        {
+          "Host": "localhost",
+          "Port": "5174"
+        }
       ],
       "UpstreamPathTemplate": "/ppidentity/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
 
+    {
+      "DownstreamPathTemplate": "/api/v1/purchase/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        //{
+        //  "Host": "104.238.103.48",
+        //  "Port": "73"
+        //}
+        {
+          "Host": "localhost",
+          "Port": "5174"
+        }
+      ],
+      "UpstreamPathTemplate": "/purchase/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
 
     //PPE ROUTERS
     {
       "DownstreamPathTemplate": "/api/v1/addition/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -461,7 +720,7 @@
     {
       "DownstreamPathTemplate": "/api/v1/assetclassification/{url}",
       "DownstreamScheme": "http",
-      "FileCacheOptions": { "TtlSeconds": 15 },
+      "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
@@ -473,15 +732,287 @@
       ],
       "UpstreamPathTemplate": "/assetclassification/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/v1/register/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "75"
+        }
+      ],
+      "UpstreamPathTemplate": "/register/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/disposal/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "75"
+        }
+      ],
+      "UpstreamPathTemplate": "/disposal/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/reassessment/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "75"
+        }
+      ],
+      "UpstreamPathTemplate": "/reassessment/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+    //FINANCE ROUTERS
+
+
+    {
+      "DownstreamPathTemplate": "/api/v1/financialyear/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "74"
+        }
+      ],
+      "UpstreamPathTemplate": "/financialyear/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/v1/gl/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "74"
+        }
+      ],
+      "UpstreamPathTemplate": "/gl/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/v1/statementtype/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "74"
+        }
+      ],
+      "UpstreamPathTemplate": "/statementtype/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/v1/subgl/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "74"
+        }
+      ],
+      "UpstreamPathTemplate": "/subgl/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/financeaccounttype/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "74"
+        }
+      ],
+      "UpstreamPathTemplate": "/financeaccounttype/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/payment/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "74"
+        }
+        //{
+        //  "Host": "localhost",
+        //  "Port": "5175"
+        //} 
+      ],
+      "UpstreamPathTemplate": "/payment/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/registry/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "74"
+        }
+      ],
+      "UpstreamPathTemplate": "/registry/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/registrytemplate/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "74"
+        }
+      ],
+      "UpstreamPathTemplate": "/registrytemplate/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/glmapping/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "74"
+        }
+      ],
+      "UpstreamPathTemplate": "/glmapping/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/bankgl/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "74"
+        }
+      ],
+      "UpstreamPathTemplate": "/bankgl/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/journalentry/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "74"
+        }
+      ],
+      "UpstreamPathTemplate": "/journalentry/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/financialtransaction/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "74"
+        }
+      ],
+      "UpstreamPathTemplate": "/financialtransaction/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/gltransaction/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "74"
+        }
+      ],
+      "UpstreamPathTemplate": "/gltransaction/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     }
 
   ],
-
-  "GlobalConfiguration": {
-    "BaseUrl": "http://104.238.103.48:70/"
-  }
+  
+  "GlobalConfiguration": [
+    //{
+    //  "BaseUrl": "http://104.238.103.48:70/"
+    //},
+    //{
+    //  "BaseUrl": "http://godp.co.uk:500/"
+    //}
+    //,
+    {
+      "BaseUrl": "http://localhost:1807/"
+    }
+  ]
 }
-
-
-
- 

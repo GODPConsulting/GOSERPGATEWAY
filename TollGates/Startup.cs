@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using Ocelot.Provider.Consul;
 using Steeltoe.Discovery.Client;
 
 namespace TollGates
@@ -22,32 +23,22 @@ namespace TollGates
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddOcelot(Configuration);
+            services.AddOcelot(Configuration).AddConsul();
             services.AddDiscoveryClient(Configuration);
             services.AddCors(options =>
             {
                 options.AddPolicy(MyAllowSpecificOrigin1,
                 builder =>
                 {
-                    builder.WithOrigins("http://localhost:5200") 
+                     builder.WithOrigins("http://godp.co.uk:500", "http://localhost:5200", "http://www.godp.co.uk:500", "http://localhost:4200")
                    .AllowAnyHeader()
                     .AllowAnyMethod(); 
-                });
-
-                options.AddPolicy(MyAllowSpecificOrigin2,
-              builder =>
-              {
-                  builder.WithOrigins("http://localhost:4200")
-                 .AllowAnyHeader()
-                  .AllowAnyMethod();
-              });
+                }); 
             });
         }
 
         public async void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-
-
+        { 
             app.UseCors("_myAllowSpecificOrigins1"); //Default
 
             if (env.IsDevelopment())
