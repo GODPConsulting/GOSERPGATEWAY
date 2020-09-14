@@ -1,7 +1,6 @@
 ﻿{
   "Routes": [
-
-
+     
     //BANKING SOLUTION ROUTERS
 
     {
@@ -52,6 +51,23 @@
         }
       ],
       "UpstreamPathTemplate": "/loanstaging/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/v1/loanoperations/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "71"
+        }
+      ],
+      "UpstreamPathTemplate": "/loanoperations/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
 
@@ -275,6 +291,22 @@
       "UpstreamPathTemplate": "/loancustomer/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
+    {
+      "DownstreamPathTemplate": "/api/v1/customer/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "71"
+        }
+      ],
+      "UpstreamPathTemplate": "/customer/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
 
     {
       "DownstreamPathTemplate": "/api/v1/creditriskscorecard/{url}",
@@ -411,6 +443,7 @@
       "UpstreamPathTemplate": "/lms/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
+    
     {
       "DownstreamPathTemplate": "/api/v1/accountopening/{url}",
       "DownstreamScheme": "http",
@@ -427,6 +460,7 @@
       "UpstreamPathTemplate": "/accountopening/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
+    
     {
       "DownstreamPathTemplate": "/api/v1/changeofrates/{url}",
       "DownstreamScheme": "http",
@@ -443,6 +477,7 @@
       "UpstreamPathTemplate": "/changeofrates/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
+    
     {
       "DownstreamPathTemplate": "/api/v1/transfer/{url}",
       "DownstreamScheme": "http",
@@ -459,6 +494,7 @@
       "UpstreamPathTemplate": "/transfer/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
+    
     {
       "DownstreamPathTemplate": "/api/v1/withdrawal/{url}",
       "DownstreamScheme": "http",
@@ -475,6 +511,7 @@
       "UpstreamPathTemplate": "/withdrawal/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
+    
     {
       "DownstreamPathTemplate": "/api/v1/dashboard/{url}",
       "DownstreamScheme": "http",
@@ -492,7 +529,7 @@
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
 
-    // IDENTITY SERVEER ROUTERS
+    // IDENTITY SERVER ROUTERS
 
     {
       "DownstreamPathTemplate": "/api/v1/identity/{url}",
@@ -505,7 +542,12 @@
         {
           "Host": "104.238.103.48",
           "Port": "72"
-        }
+        } 
+        //{
+        //  "Host": "localhost",
+        //  "Port": "44337"
+        //}
+
       ],
       "UpstreamPathTemplate": "/identity/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
@@ -519,14 +561,10 @@
         "Type": "RoundRobin"
       },
       "DownStreamHostAndPorts": [
-        //{
-        //  "Host": "104.238.103.48",
-        //  "Port": "72"
-        //}
         {
-          "Host": "localhost",
-          "Port": "59798"
-        }
+          "Host": "104.238.103.48",
+          "Port": "72"
+        } 
       ],
       "UpstreamPathTemplate": "/admin/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
@@ -540,14 +578,10 @@
         "Type": "RoundRobin"
       },
       "DownStreamHostAndPorts": [
-        //{
-        //  "Host": "104.238.103.48",
-        //  "Port": "72"
-        //}
         {
-          "Host": "localhost",
-          "Port": "59798"
-        }
+          "Host": "104.238.103.48",
+          "Port": "72"
+        } 
       ],
       "UpstreamPathTemplate": "/workflow/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
@@ -561,14 +595,10 @@
         "Type": "RoundRobin"
       },
       "DownStreamHostAndPorts": [
-        //{
-        //  "Host": "104.238.103.48",
-        //  "Port": "72"
-        //}
         {
-          "Host": "localhost",
-          "Port": "59798"
-        }
+          "Host": "104.238.103.48",
+          "Port": "72"
+        } 
       ],
       "UpstreamPathTemplate": "/company/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
@@ -582,18 +612,15 @@
         "Type": "RoundRobin"
       },
       "DownStreamHostAndPorts": [
-        //{
-        //  "Host": "104.238.103.48",
-        //  "Port": "72"
-        //}  
         {
-          "Host": "localhost",
-          "Port": "59798"
-        }
+          "Host": "104.238.103.48",
+          "Port": "72"
+        }   
       ],
       "UpstreamPathTemplate": "/common/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
+    
     {
       "DownstreamPathTemplate": "/api/v1/email/{url}",
       "DownstreamScheme": "http",
@@ -608,33 +635,50 @@
         }
         //{
         //  "Host": "localhost",
-        //  "Port": "59798"
+        //  "Port": "44337"
         //}
+        
       ],
       "UpstreamPathTemplate": "/email/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
 
-
-    //PURCHASES AND PAYABLES ROUTERS
-
-
     {
-      "DownstreamPathTemplate": "/api/v1/supplier/{url}",
+      "DownstreamPathTemplate": "/api/v1/expose/{url}",
       "DownstreamScheme": "http",
       "FileCacheOptions": { "TtlSeconds": 0 },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
       "DownStreamHostAndPorts": [
-        //{
-        //  "Host": "104.238.103.48",
-        //  "Port": "73"
-        //}
         {
-          "Host": "localhost",
-          "Port": "5174"
+          "Host": "104.238.103.48",
+          "Port": "72"
+        } 
+      ],
+      "UpstreamPathTemplate": "/expose/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    },
+
+    //PURCHASES AND PAYABLES ROUTERS
+
+
+    {
+      "DownstreamPathTemplate": "/api/v1/expose/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": { "TtlSeconds": 0 },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "104.238.103.48",
+          "Port": "73"
         }
+        //{
+        //  "Host": "localhost",
+        //  "Port": "5174"
+        //}
       ],
       "UpstreamPathTemplate": "/supplier/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
@@ -652,6 +696,10 @@
           "Host": "104.238.103.48",
           "Port": "73"
         }
+        //{
+        //  "Host": "localhost",
+        //  "Port": "5174"
+        //} 
       ],
       "UpstreamPathTemplate": "/onwebsupplier/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
@@ -665,14 +713,10 @@
         "Type": "RoundRobin"
       },
       "DownStreamHostAndPorts": [
-        //{
-        //  "Host": "104.238.103.48",
-        //  "Port": "73"
-        //}
         {
-          "Host": "localhost",
-          "Port": "5174"
-        }
+          "Host": "104.238.103.48",
+          "Port": "73"
+        } 
       ],
       "UpstreamPathTemplate": "/ppidentity/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
@@ -686,14 +730,14 @@
         "Type": "RoundRobin"
       },
       "DownStreamHostAndPorts": [
-        //{
-        //  "Host": "104.238.103.48",
-        //  "Port": "73"
-        //}
         {
-          "Host": "localhost",
-          "Port": "5174"
+          "Host": "104.238.103.48",
+          "Port": "73"
         }
+        //{
+        //  "Host": "localhost",
+        //  "Port": "5174"
+        //} 
       ],
       "UpstreamPathTemplate": "/purchase/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
@@ -750,6 +794,7 @@
       "UpstreamPathTemplate": "/register/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
+    
     {
       "DownstreamPathTemplate": "/api/v1/disposal/{url}",
       "DownstreamScheme": "http",
@@ -766,6 +811,7 @@
       "UpstreamPathTemplate": "/disposal/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
+    
     {
       "DownstreamPathTemplate": "/api/v1/reassessment/{url}",
       "DownstreamScheme": "http",
@@ -852,6 +898,7 @@
       "UpstreamPathTemplate": "/subgl/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
+   
     {
       "DownstreamPathTemplate": "/api/v1/financeaccounttype/{url}",
       "DownstreamScheme": "http",
@@ -868,6 +915,7 @@
       "UpstreamPathTemplate": "/financeaccounttype/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
+   
     {
       "DownstreamPathTemplate": "/api/v1/payment/{url}",
       "DownstreamScheme": "http",
@@ -879,15 +927,12 @@
         {
           "Host": "104.238.103.48",
           "Port": "74"
-        }
-        //{
-        //  "Host": "localhost",
-        //  "Port": "5175"
-        //} 
+        } 
       ],
       "UpstreamPathTemplate": "/payment/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
+   
     {
       "DownstreamPathTemplate": "/api/v1/registry/{url}",
       "DownstreamScheme": "http",
@@ -904,6 +949,7 @@
       "UpstreamPathTemplate": "/registry/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
+   
     {
       "DownstreamPathTemplate": "/api/v1/registrytemplate/{url}",
       "DownstreamScheme": "http",
@@ -920,6 +966,7 @@
       "UpstreamPathTemplate": "/registrytemplate/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
+   
     {
       "DownstreamPathTemplate": "/api/v1/glmapping/{url}",
       "DownstreamScheme": "http",
@@ -936,6 +983,7 @@
       "UpstreamPathTemplate": "/glmapping/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
+   
     {
       "DownstreamPathTemplate": "/api/v1/bankgl/{url}",
       "DownstreamScheme": "http",
@@ -952,6 +1000,7 @@
       "UpstreamPathTemplate": "/bankgl/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
+    
     {
       "DownstreamPathTemplate": "/api/v1/journalentry/{url}",
       "DownstreamScheme": "http",
@@ -968,6 +1017,7 @@
       "UpstreamPathTemplate": "/journalentry/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
+   
     {
       "DownstreamPathTemplate": "/api/v1/financialtransaction/{url}",
       "DownstreamScheme": "http",
@@ -979,11 +1029,12 @@
         {
           "Host": "104.238.103.48",
           "Port": "74"
-        }
+        } 
       ],
       "UpstreamPathTemplate": "/financialtransaction/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     },
+   
     {
       "DownstreamPathTemplate": "/api/v1/gltransaction/{url}",
       "DownstreamScheme": "http",
@@ -1000,19 +1051,45 @@
       "UpstreamPathTemplate": "/gltransaction/{url}",
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     }
-
+    
   ],
-  
+
   "GlobalConfiguration": [
-    //{
-    //  "BaseUrl": "http://104.238.103.48:70/"
-    //},
-    //{
-    //  "BaseUrl": "http://godp.co.uk:500/"
-    //}
-    //,
     {
-      "BaseUrl": "http://localhost:1807/"
-    }
+      "baseurl": "http://104.238.103.48:70/"
+    },
+    {
+      "baseurl": "http://godp.co.uk:500/"
+    },
+    {
+      "baseurl": "http://godp.co.uk:550/"
+    },
+    {
+      "baseurl": "http://godp.co.uk:650/"
+    },
+    {
+      "baseurl": "https://godp.co.uk:443/"
+    },
+    {
+      "baseurl": "http://localhost:6200"
+    },
+    {
+      "baseurl": "http://localhost:8100"
+    },
+    {
+      "baseurl": "http://localhost:5200"
+    },
+    {
+      "baseurl": "http://104.238.103.48:73/"
+    },
+    {
+      "baseurl": "http://localhost:18157"
+    },
+    {
+      "baseurl": "https://localhost:44341"
+    },
+    {
+      "baseurl": "https://50.62.170.39:443/"
+    } 
   ]
 }
