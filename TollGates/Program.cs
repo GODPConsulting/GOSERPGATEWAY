@@ -11,7 +11,7 @@ using TollGates;
 
 namespace TollGates
 {
-    public class Program
+    public class Program    
     {
         public static void Main(string[] args)
         {

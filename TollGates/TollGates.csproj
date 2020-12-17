@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Dockerfile" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FluentValidation" Version="9.2.0" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="9.2.0" />
     <PackageReference Include="MediatR" Version="8.1.0" />
@@ -22,5 +26,7 @@
     <PackageReference Include="Ocelot.Provider.Consul" Version="16.0.0" />
     <PackageReference Include="Steeltoe.Discovery.ClientCore" Version="2.4.3" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsetting_1json__JsonSchema="https://carafe.fm/schema/draft-02/bundle.schema.json" /></VisualStudio></ProjectExtensions>
 
 </Project>
