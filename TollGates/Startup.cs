@@ -34,20 +34,16 @@ namespace TollGates
 
         public async void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseCors("CorsPolicy");
+            app.UseCors("CorsPolicy"); 
 
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseHsts();
-            }
+            if (env.IsDevelopment()) 
+                app.UseDeveloperExceptionPage(); 
+            else 
+                app.UseHsts(); 
+
             await app.UseOcelot();
             app.UseRouting();
-            app.UseStaticFiles();
-           // app.UseDiscoveryClient(); 
+            app.UseStaticFiles();  
         }
     }
 }
