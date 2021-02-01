@@ -33,20 +33,7 @@ namespace APIGateway.AcceptanceTest.Broker
             var response = await client.GetStringAsync($"{test_url.Backend}test_response/indentity_server/get/connectionstring");
             return response;
         }
-
-        public async Task<Backend_response> Login_into_identity_severasync()
-        {
-            var test_url = new Identity_server();
-            var client = new HttpClient();
-            var loginrequest = new Login();
-            var jsoncontent = JsonConvert.SerializeObject(loginrequest);
-            var buffercontent = Encoding.UTF8.GetBytes(jsoncontent);
-            var bytecontent = new ByteArrayContent(buffercontent);
-            bytecontent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            var response = await client.PostAsync($"{test_url.Backend}api/v1/identity/login", bytecontent);
-            var respnse_strings_value = await response.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<Backend_response>(respnse_strings_value);
-        }
+ 
          
         public async Task<bool> Return_identity_server_operatons_async()
         {
@@ -56,6 +43,7 @@ namespace APIGateway.AcceptanceTest.Broker
             return Read_operations_data(conn_str); 
         }
 
+       
 
         private static bool Read_operations_data(string connectionString)
         {
@@ -70,6 +58,13 @@ namespace APIGateway.AcceptanceTest.Broker
                     return reader.Read(); 
                 }
             }
+        }
+         
+        public async Task<bool> Make_a_request_that_will_return_true_for_identity_server()
+        {
+            var test_url = new Identity_server(); 
+            var url = $"{test_url.DefaultGateway}admin/get/all/activityParents";
+            return await Access_service_via_the_default_Gateway(url);
         }
 
     }

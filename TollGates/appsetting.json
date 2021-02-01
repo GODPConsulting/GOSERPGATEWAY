@@ -3,15 +3,15 @@
 
     //IMPORTANT FIRST DEFAULT GATEWAY
     {
-      "BaseUrl": "http://192.168.1.100:3030/"
+      "BaseUrl": "http://107.180.93.38:5050/"
     },
     //IMPORTANT PURCHASEANDPAYABLES WEB
     {
-      "BaseUrl": "http://192.168.1.100:3031/"
+      "BaseUrl": "http://107.180.93.38:6062/"
     },
     //IMPORTANT CREDIT WEB
     {
-      "BaseUrl": "http://192.168.1.100:3032/"
+      "BaseUrl": "http://107.180.93.38:6061/"
     }
   ],
 
@@ -510,9 +510,14 @@
         "Type": "RoundRobin"
       },
       "DownStreamHostAndPorts": [
+        //{
+        //  "Host": "192.168.1.100",
+        //  "Port": "92"
+        //}
+
         {
-          "Host": "192.168.1.100",
-          "Port": "92"
+          "Host": "localhost",
+          "Port": "5174"
         }
       ],
       "UpstreamPathTemplate": "/loancustomer/{url}",
@@ -671,9 +676,13 @@
         "Type": "RoundRobin"
       },
       "DownStreamHostAndPorts": [
+        //{
+        //  "Host": "192.168.1.100",
+        //  "Port": "92"
+        //}
         {
-          "Host": "192.168.1.100",
-          "Port": "92"
+          "Host": "localhost",
+          "Port": "5174"
         }
       ],
       "UpstreamPathTemplate": "/loan/{url}",

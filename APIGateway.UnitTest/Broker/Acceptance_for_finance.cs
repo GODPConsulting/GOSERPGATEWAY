@@ -28,28 +28,19 @@ namespace APIGateway.AcceptanceTest.Broker
             var test_url = new Finance();
             var client = new HttpClient();
             var conn_str = await client.GetStringAsync($"{test_url.Backend}test_response/finance/get/connectionstring");
-            return Check_if_table_exist_finance(conn_str);
+            string query = $"select * from fin_transaction";
+            return Access_database_and_return_boolean(conn_str, query);
         }
 
-        public static bool Check_if_table_exist_finance(string connString)
+
+        public async Task<bool> Make_a_request_that_will_return_true_for_finance()
         {
-            string query = "select * from fin_transaction";
-            using (SqlConnection conn = new SqlConnection(connString))
-            {
-                conn.Open();
-                using (SqlCommand command = new SqlCommand(query, conn))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            return true;
-                        }
-                    }
-                }
-            }
-            return false;
-        }
+            var test_url = new Finance(); 
+            var url = $"{test_url.DefaultGateway}bankgl/get/all/bankgl";
+            return await Access_service_via_the_default_Gateway(url);
+        } 
+
+      
 
     }
 }

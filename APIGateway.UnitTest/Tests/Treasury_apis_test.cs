@@ -2,6 +2,7 @@
 using APIGateway.AcceptanceTest.Test_models.Response;
 using FluentAssertions;
 using Newtonsoft.Json;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -54,7 +55,14 @@ namespace APIGateway.AcceptanceTest.APIs
             response.Should().Be(true);
         }
 
-        
+        [Fact]
+        public async Task Should_be_successful_if_treasure_stream_templates_are_configured()
+        {
+            var response = await _Treasury_Server_Api_Broker.Make_a_request_that_will_return_true_for_treasury();
+
+            response.Should().BeTrue();
+        }
+
     }
 }
 

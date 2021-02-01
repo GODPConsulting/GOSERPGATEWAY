@@ -57,7 +57,7 @@ namespace APIGateway.AcceptanceTest.APIs
         [Fact]
         public async Task Should_be_successful_if_Credit_sever_tables_are_updated()
         {
-            var response = await _Credit_Server_Api_Broker.Login_into_credit_async();
+            var response = await _Credit_Server_Api_Broker.Login_into_service_async("customer/identity/login");
 
             response.Status.Message.FriendlyMessage.Should().Be("Invalid Password");
         }
@@ -86,6 +86,7 @@ namespace APIGateway.AcceptanceTest.APIs
 
             response.Should().Be(true);
         }
+         
     }
 }
 

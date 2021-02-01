@@ -33,22 +33,32 @@ namespace APIGateway.AcceptanceTest.Broker
 
         public static bool Check_if_table_exist_Treasury(string connString)
         {
-            string query = "select * from Treasury_assetclassification";
+            string query = "select * from tre_collection";
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 conn.Open();
                 using (SqlCommand command = new SqlCommand(query, conn))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
+                { 
+                    try
                     {
-                        while (reader.Read())
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
                             return true;
                         }
                     }
+                    catch (System.Exception)
+                    {
+                        return false;
+                    } 
                 }
-            }
-            return false;
+            } 
+        }
+
+        public async Task<bool> Make_a_request_that_will_return_true_for_treasury()
+        {
+            var test_url = new Treasury(); 
+            var url = $"{test_url.DefaultGateway}issuerinvestment/get/all/issuerinvestment";
+            return await Access_service_via_the_default_Gateway(url);
         }
 
     }

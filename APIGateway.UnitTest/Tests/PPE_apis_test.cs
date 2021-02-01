@@ -54,7 +54,16 @@ namespace APIGateway.AcceptanceTest.APIs
             response.Should().Be(true);
         }
 
-        
+        [Fact]
+        public async Task Should_be_successful_if_PPE_stream_templates_are_configured()
+        {
+            var response = await _PPE_Server_Api_Broker.Make_a_request_that_will_return_true_for_PPE();
+
+            response.Should().BeTrue();
+        }
+
+
+
     }
 }
 

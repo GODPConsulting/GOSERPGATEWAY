@@ -4,6 +4,7 @@ using Microsoft.Data.SqlClient;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Data;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -46,16 +47,31 @@ namespace APIGateway.AcceptanceTest.Broker
                 conn.Open();
                 using (SqlCommand command = new SqlCommand(query, conn))
                 {
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    try
                     {
-                        while (reader.Read())
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
+                            conn.Close();
                             return true;
                         }
                     }
+                    catch (System.Exception)
+                    {
+                        conn.Close();
+                        return false;
+                    }
+
                 }
-            }
-            return false;
+            } 
+        }
+
+
+        public async Task<bool> Make_a_request_that_will_return_true_for_PPE()
+        {
+            
+            var test_url = new PPE();  
+            var url = $"{test_url.DefaultGateway}addition/get/all/addition";
+            return await Access_service_via_the_default_Gateway(url);
         }
 
     }

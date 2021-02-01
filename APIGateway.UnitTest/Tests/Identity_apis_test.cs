@@ -47,7 +47,7 @@ namespace APIGateway.AcceptanceTest.APIs
         [Fact]
         public async Task Should_be_successful_if_identity_sever_tables_are_updated()
         {
-            var response = await _identity_Server_Api_Broker.Login_into_identity_severasync();
+            var response = await _identity_Server_Api_Broker.Login_into_service_async("identity/login");
 
             response.Status.Message.FriendlyMessage.Should().Be("User does not exist");
         }
@@ -59,6 +59,17 @@ namespace APIGateway.AcceptanceTest.APIs
 
             response.Should().Be(true);
         }
+
+        [Fact]
+        public async Task Should_be_successful_if_finance_stream_templates_are_configured()
+        {
+            var response = await _identity_Server_Api_Broker.Make_a_request_that_will_return_true_for_identity_server();
+
+            response.Should().BeTrue();
+        }
+
+    
+
     }
 }
 

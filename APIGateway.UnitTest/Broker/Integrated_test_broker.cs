@@ -1,16 +1,19 @@
-﻿using APIGateway.AcceptanceTest.Test_models.Response;
+﻿using APIGateway.AcceptanceTest.APIs;
+using APIGateway.AcceptanceTest.Test_models.Response;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
+using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 using RESTFulSense.Clients;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
 using TollGates;
-using Xunit;
 
 namespace APIGateway.AcceptanceTest.Broker
 {
@@ -34,8 +37,7 @@ namespace APIGateway.AcceptanceTest.Broker
             baseClient = _factory.CreateClient(); 
             apiFactoryClient = new RESTFulApiFactoryClient(baseClient); 
         }
-
-        [Fact]
+         
         public GlobalConfigurationBaseURLS Return_GlobalConfiguration()
         {
             var settings = File.ReadAllText("appsetting.json"); 
@@ -51,6 +53,62 @@ namespace APIGateway.AcceptanceTest.Broker
                 return urls;
             }
             return new GlobalConfigurationBaseURLS();
+        }
+
+        public static bool Access_database_and_return_boolean(string connString, string query)
+        { 
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    try
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            conn.Close();
+                            return true;
+                        }
+                    }
+                    catch (System.Exception)
+                    {
+                        conn.Close();
+                        return false;
+                    }
+
+                }
+            }
+        }
+
+        public async Task<bool> Access_service_via_the_default_Gateway(string Url)
+        {
+            var client = new HttpClient();
+
+            await Authenticate_async(client);
+
+            var response = await client.GetAsync(Url);
+
+            var response_as_strings = await response.Content.ReadAsStringAsync();
+
+            var deserialized_response = JsonConvert.DeserializeObject<Backend_response>(response_as_strings);
+
+            return deserialized_response.Status.IsSuccessful;
+        }
+
+        public async Task<Backend_response> Login_into_service_async(string url)
+        {
+            var testurl = new General_urls();
+            var client = new HttpClient();
+
+            var loginrequest = new Login();
+            var jsoncontent = JsonConvert.SerializeObject(loginrequest);
+            var buffercontent = Encoding.UTF8.GetBytes(jsoncontent);
+            var bytecontent = new ByteArrayContent(buffercontent);
+
+            bytecontent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            var response = await client.PostAsync($"{testurl.DefaultGateway}{url}", bytecontent);
+            var respnse_strings_value = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<Backend_response>(respnse_strings_value);
         }
     }
 }

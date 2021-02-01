@@ -29,21 +29,7 @@ namespace APIGateway.AcceptanceTest.Broker
             var response = await client.GetStringAsync($"{test_url.Backend}test_response/credit/get/connectionstring");
             return response;
         } 
-
-        public async Task<Backend_response> Login_into_credit_async()
-        {
-            var test_url = new Credit(); 
-            var client = new HttpClient();
-            var loginrequest = new Login();
-            var jsoncontent = JsonConvert.SerializeObject(loginrequest);
-            var buffercontent = Encoding.UTF8.GetBytes(jsoncontent);
-            var bytecontent = new ByteArrayContent(buffercontent);
-            bytecontent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            var response = await client.PostAsync($"{test_url.Backend}api/v1/customer/identity/login", bytecontent);
-            var respnse_strings_value = await response.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<Backend_response>(respnse_strings_value);
-        } 
-
+         
         public async Task<bool> Return_credit_loan_schedule_type_async()
         {
             var test_url = new Credit();

@@ -54,14 +54,24 @@ namespace APIGateway.AcceptanceTest.APIs
             connectionstr.Should().Be(testurls.connection_strings);
         }
 
+        [Fact]
+        public async Task Should_be_successful_if_purchase_payables_stream_templates_are_configured()
+        {
+            var response = await _identity_Server_Api_Broker.Login_into_service_async("ppidentity/login"); 
+
+            response.Status.Message.FriendlyMessage.Should().Be("User does not exist");
+        }
 
         [Fact]
         public async Task Should_be_successful_if_purchase_payables_tables_are_updated()
         { 
-            var response = await _identity_Server_Api_Broker.Login_into_purchase_payables_async();
+            var response = await _identity_Server_Api_Broker.Access_purchase_payables_tables();
 
-            response.Status.Message.FriendlyMessage.Should().Be("User does not exist");
+            response.Should().Be(true);
         }
+
+    
+
     }
 }
 
