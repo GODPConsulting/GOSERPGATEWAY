@@ -39,7 +39,9 @@ namespace TollGates
             if (env.IsDevelopment()) 
                 app.UseDeveloperExceptionPage(); 
             else 
-                app.UseHsts(); 
+                app.UseHsts();
+        
+                app.UseWebSockets();
 
             await app.UseOcelot();
             app.UseRouting();

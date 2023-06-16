@@ -3,24 +3,25 @@
 
     //IMPORTANT FIRST DEFAULT GATEWAY
     {
-      "BaseUrl": "http://107.180.93.38:5050/"
+      "BaseUrl": "https://api.goserp.co.uk/"
     },
     //IMPORTANT PURCHASEANDPAYABLES WEB
     {
-      "BaseUrl": "http://107.180.93.38:6062/"
+      "BaseUrl": "http://purchases.goserp.co.uk/"
     },
     //IMPORTANT CREDIT WEB
     {
-      "BaseUrl": "http://107.180.93.38:6061/"
+      "BaseUrl": "https://credit.goserp.co.uk/"
     }
   ],
 
   "Routes": [
+    //"input the new server"
     //BANKING SOLUTION ROUTERS
     {
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -51,9 +52,9 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
-        } 
+        }
       ],
       "UpstreamPathTemplate": "/customer_account_operation/{url}",
       "UpstreamHttpMethod": [
@@ -74,7 +75,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "91"
         }
       ],
@@ -97,7 +98,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -120,9 +121,9 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
-        } 
+        }
       ],
       "UpstreamPathTemplate": "/acounttype/{url}",
       "UpstreamHttpMethod": [
@@ -143,7 +144,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -166,7 +167,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -189,7 +190,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -212,7 +213,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -235,7 +236,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -258,7 +259,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -281,7 +282,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -304,7 +305,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -327,7 +328,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -350,9 +351,9 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
-        } 
+        }
       ],
       "UpstreamPathTemplate": "/accounttype/{url}",
       "UpstreamHttpMethod": [
@@ -373,7 +374,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -396,7 +397,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -419,7 +420,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -442,7 +443,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -465,7 +466,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -488,7 +489,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -510,15 +511,12 @@
         "Type": "RoundRobin"
       },
       "DownStreamHostAndPorts": [
-        //{
-        //  "Host": "192.168.1.100",
-        //  "Port": "92"
-        //}
-
         {
-          "Host": "localhost",
-          "Port": "5174"
+          "Host": "92.205.27.45",
+          "Port": "92"
         }
+
+
       ],
       "UpstreamPathTemplate": "/loancustomer/{url}",
       "UpstreamHttpMethod": [
@@ -539,7 +537,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -562,7 +560,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -585,7 +583,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -608,7 +606,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -631,7 +629,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -654,7 +652,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -676,14 +674,11 @@
         "Type": "RoundRobin"
       },
       "DownStreamHostAndPorts": [
-        //{
-        //  "Host": "192.168.1.100",
-        //  "Port": "92"
-        //}
         {
-          "Host": "localhost",
-          "Port": "5174"
+          "Host": "92.205.27.45",
+          "Port": "92"
         }
+
       ],
       "UpstreamPathTemplate": "/loan/{url}",
       "UpstreamHttpMethod": [
@@ -704,7 +699,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -727,7 +722,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -750,9 +745,9 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
-        } 
+        }
       ],
       "UpstreamPathTemplate": "/accountopening/{url}",
       "UpstreamHttpMethod": [
@@ -773,7 +768,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -796,7 +791,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -819,7 +814,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -842,7 +837,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -865,7 +860,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "92"
         }
       ],
@@ -889,9 +884,9 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "91"
-        } 
+        }
       ],
       "UpstreamPathTemplate": "/identity/{url}",
       "UpstreamHttpMethod": [
@@ -912,9 +907,9 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "91"
-        } 
+        }
 
       ],
       "UpstreamPathTemplate": "/admin/{url}",
@@ -937,9 +932,9 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "91"
-        } 
+        }
 
       ],
       "UpstreamPathTemplate": "/workflow/{url}",
@@ -961,10 +956,10 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "91"
         }
-      
+
       ],
       "UpstreamPathTemplate": "/company/{url}",
       "UpstreamHttpMethod": [
@@ -985,9 +980,9 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "91"
-        } 
+        }
       ],
       "UpstreamPathTemplate": "/common/{url}",
       "UpstreamHttpMethod": [
@@ -1008,9 +1003,9 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "91"
-        } 
+        }
 
       ],
       "UpstreamPathTemplate": "/email/{url}",
@@ -1032,7 +1027,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "91"
         }
 
@@ -1057,9 +1052,9 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "93"
-        } 
+        }
       ],
       "UpstreamPathTemplate": "/supplier/{url}",
       "UpstreamHttpMethod": [
@@ -1080,10 +1075,10 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "93"
         }
-      
+
       ],
       "UpstreamPathTemplate": "/onwebsupplier/{url}",
       "UpstreamHttpMethod": [
@@ -1104,10 +1099,10 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "93"
         }
-       
+
       ],
       "UpstreamPathTemplate": "/ppidentity/{url}",
       "UpstreamHttpMethod": [
@@ -1128,9 +1123,9 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "93"
-        } 
+        }
       ],
       "UpstreamPathTemplate": "/purchase/{url}",
       "UpstreamHttpMethod": [
@@ -1151,10 +1146,10 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "93"
         }
-      
+
       ],
       "UpstreamPathTemplate": "/report/{url}",
       "UpstreamHttpMethod": [
@@ -1176,10 +1171,10 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
-          "Port": "95"
+          "Host": "92.205.27.45",
+          "Port": "905"
         }
-       
+
       ],
       "UpstreamPathTemplate": "/addition/{url}",
       "UpstreamHttpMethod": [
@@ -1200,10 +1195,10 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
-          "Port": "95"
+          "Host": "92.205.27.45",
+          "Port": "905"
         }
-         
+
       ],
       "UpstreamPathTemplate": "/assetclassification/{url}",
       "UpstreamHttpMethod": [
@@ -1224,10 +1219,10 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
-          "Port": "95"
+          "Host": "92.205.27.45",
+          "Port": "905"
         }
-     
+
       ],
       "UpstreamPathTemplate": "/register/{url}",
       "UpstreamHttpMethod": [
@@ -1248,11 +1243,11 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
-          "Port": "95"
+          "Host": "92.205.27.45",
+          "Port": "905"
         }
-        
-    
+
+
       ],
       "UpstreamPathTemplate": "/disposal/{url}",
       "UpstreamHttpMethod": [
@@ -1273,10 +1268,10 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
-          "Port": "95"
+          "Host": "92.205.27.45",
+          "Port": "905"
         }
-      
+
       ],
       "UpstreamPathTemplate": "/reassessment/{url}",
       "UpstreamHttpMethod": [
@@ -1298,7 +1293,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "94"
         }
       ],
@@ -1321,7 +1316,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "94"
         }
       ],
@@ -1344,7 +1339,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "94"
         }
       ],
@@ -1367,7 +1362,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "94"
         }
       ],
@@ -1390,7 +1385,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "94"
         }
       ],
@@ -1413,7 +1408,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "94"
         }
       ],
@@ -1436,7 +1431,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "94"
         }
       ],
@@ -1459,7 +1454,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "94"
         }
       ],
@@ -1482,7 +1477,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "94"
         }
       ],
@@ -1505,7 +1500,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "94"
         }
       ],
@@ -1528,7 +1523,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "94"
         }
       ],
@@ -1551,7 +1546,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "94"
         }
       ],
@@ -1574,7 +1569,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "94"
         }
       ],
@@ -1598,7 +1593,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "96"
         }
       ],
@@ -1621,7 +1616,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "96"
         }
       ],
@@ -1644,7 +1639,7 @@
       },
       "DownStreamHostAndPorts": [
         {
-          "Host": "192.168.1.100",
+          "Host": "92.205.27.45",
           "Port": "96"
         }
       ],
@@ -1655,6 +1650,155 @@
         "DELETE",
         "PUT"
       ]
+
+    },
+    //LMS Module
+    {
+      "DownstreamPathTemplate": "/api/v1/learning/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": {
+        "TtlSeconds": 0
+      },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "92.205.27.45",
+          "Port": "97"
+        }
+      ],
+      "UpstreamPathTemplate": "/learning/{url}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST",
+        "DELETE",
+        "PUT"
+      ]
+    },
+    //Performance Module
+    {
+      "DownstreamPathTemplate": "/api/v1/performance/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": {
+        "TtlSeconds": 0
+      },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "92.205.27.45",
+          "Port": "98"
+        }
+      ],
+      "UpstreamPathTemplate": "/performance/{url}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST",
+        "DELETE",
+        "PUT"
+      ]
+    },
+    //Employee Module
+    {
+      "DownstreamPathTemplate": "/api/v1/employee/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": {
+        "TtlSeconds": 0
+      },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "92.205.27.45",
+          "Port": "99"
+        }
+      ],
+      "UpstreamPathTemplate": "/employee/{url}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST",
+        "DELETE",
+        "PUT"
+      ]
+    },
+
+    //RMS Module
+    {
+      "DownstreamPathTemplate": "/api/v1/rmssetup/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": {
+        "TtlSeconds": 0
+      },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "92.205.27.45",
+          "Port": "100"
+        }
+      ],
+      "UpstreamPathTemplate": "/rmssetup/{url}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST",
+        "DELETE",
+        "PUT"
+      ]
+    },
+
+    //Expense Manager
+    {
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "92.205.27.45",
+          "Port": "101"
+        }
+      ],
+      "DownstreamPathTemplate": "/api/v1/expmgr/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": {
+        "TtlSeconds": 0
+      },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST",
+        "DELETE",
+        "PUT"
+      ],
+      "UpstreamPathTemplate": "/expmgr/{url}"
+    },
+    //websoccket
+    {
+      "DownstreamPathTemplate": "/toastr",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": {
+        "TtlSeconds": 0
+      },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "92.205.27.45",
+          "Port": "91"
+        }
+      ],
+      "UpstreamPathTemplate": "/toastr",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST",
+        "DELETE",
+        "PUT"
+      ]
     }
+
   ]
+
 }
