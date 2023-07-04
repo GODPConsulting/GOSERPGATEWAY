@@ -21,7 +21,7 @@ namespace TollGates
         public void ConfigureServices(IServiceCollection services)
         { 
             services.AddOcelot(Configuration).AddConsul();
-             services.AddDiscoveryClient(Configuration);
+            services.AddDiscoveryClient(Configuration);
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
@@ -43,7 +43,7 @@ namespace TollGates
         
                 app.UseWebSockets();
 
-            await app.UseOcelot();
+            app.UseOcelot().Wait();
             app.UseRouting();
             app.UseStaticFiles();  
         }

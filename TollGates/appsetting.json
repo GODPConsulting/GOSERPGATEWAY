@@ -1774,9 +1774,15 @@
       ],
       "UpstreamPathTemplate": "/expmgr/{url}"
     },
-    //websoccket
+    //Inventory Module
     {
-      "DownstreamPathTemplate": "/toastr",
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "92.205.27.45",
+          "Port": "9090"
+        }
+      ],
+      "DownstreamPathTemplate": "/api/v1/inventory/{url}",
       "DownstreamScheme": "http",
       "FileCacheOptions": {
         "TtlSeconds": 0
@@ -1784,19 +1790,13 @@
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
-      "DownStreamHostAndPorts": [
-        {
-          "Host": "92.205.27.45",
-          "Port": "91"
-        }
-      ],
-      "UpstreamPathTemplate": "/toastr",
       "UpstreamHttpMethod": [
         "GET",
         "POST",
         "DELETE",
         "PUT"
-      ]
+      ],
+      "UpstreamPathTemplate": "/inventory/{url}"
     }
 
   ]
