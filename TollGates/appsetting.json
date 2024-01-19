@@ -1702,6 +1702,29 @@
         "PUT"
       ],
       "UpstreamPathTemplate": "/inventory/{url}"
+    },
+    {
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "208.109.191.14",
+          "Port": "99"
+        }
+      ],
+      "DownstreamPathTemplate": "/api/v1/inventory/{url}",
+      "DownstreamScheme": "http",
+      "FileCacheOptions": {
+        "TtlSeconds": 0
+      },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST",
+        "DELETE",
+        "PUT"
+      ],
+      "UpstreamPathTemplate": "/revenue/{url}"
     }
 
   ]
