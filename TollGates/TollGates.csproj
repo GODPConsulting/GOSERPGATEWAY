@@ -27,6 +27,6 @@
     <PackageReference Include="Steeltoe.Discovery.ClientCore" Version="2.4.3" />
   </ItemGroup>
 
-  <ProjectExtensions><VisualStudio><UserProperties appsetting_1json__JsonSchema="https://carafe.fm/schema/draft-02/bundle.schema.json" /></VisualStudio></ProjectExtensions>
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>
